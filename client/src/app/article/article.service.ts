@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -7,14 +8,15 @@ import { Article } from './article';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const apiUrl = '/api/professor';
+const apiUrl = `${environment.baseApiUrl}/professor`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -24,11 +26,10 @@ export class ArticleService {
   }
 
   getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(apiUrl)
-      .pipe(
-        tap(article => console.log('fetched articles')),
-        catchError(this.handleError('getArticles', []))
-      );
+    return this.http.get<Article[]>(apiUrl, {}).pipe(
+      tap(article => console.log('fetched articles')),
+      catchError(this.handleError('getArticles', []))
+    );
   }
 
   getArticle(id: number): Observable<Article> {

@@ -8,8 +8,8 @@ import { ShowArticleComponent } from './article/show-article/show-article.compon
 import { AddArticleComponent } from './article/add-article/add-article.component';
 import { EditArticleComponent } from './article/edit-article/edit-article.component';
 import { HomeComponent } from './home/home.component';
-import { ProfessorComponent } from './professor/professor.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddArticleComponent,
     EditArticleComponent,
     HomeComponent,
-    ProfessorComponent,
     NavbarComponent,
   ],
   imports: [
@@ -27,7 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

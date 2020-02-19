@@ -4,30 +4,36 @@ import { ArticlesComponent } from './article/articles/articles.component';
 import { ShowArticleComponent } from './article/show-article/show-article.component';
 import { AddArticleComponent } from './article/add-article/add-article.component';
 import { EditArticleComponent } from './article/edit-article/edit-article.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path: 'articles',
+    path: 'home',
+    component: HomeComponent,
+    data: { title: 'Home' }
+  },
+  {
+    path: 'professors',
     component: ArticlesComponent,
     data: { title: 'List of Articles' }
   },
   {
-    path: 'show-article/:id',
+    path: 'professor/:id',
     component: ShowArticleComponent,
     data: { title: 'Show Product' }
   },
   {
-    path: 'add-article',
+    path: 'add-professor',
     component: AddArticleComponent,
     data: { title: 'Add Article' }
   },
   {
-    path: 'edit-article/:id',
+    path: 'edit-professor/:id',
     component: EditArticleComponent,
     data: { title: 'Edit Article' }
   },
   { path: '',
-    redirectTo: '/articles',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];

@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ArticlesComponent } from './article/articles/articles.component';
 import { ShowArticleComponent } from './article/show-article/show-article.component';
-import { AddArticleComponent } from './article/add-article/add-article.component';
-import { EditArticleComponent } from './article/edit-article/edit-article.component';
 import { HomeComponent } from './home/home.component';
+import { ProfessorsComponent } from './professor/professors/professors.component';
 
 const routes: Routes = [
   {
@@ -13,24 +11,14 @@ const routes: Routes = [
     data: { title: 'Home' }
   },
   {
-    path: 'professors',
-    component: ArticlesComponent,
-    data: { title: 'List of Articles' }
+    path: 'professor',
+    component: ProfessorsComponent,
+    data: { title: 'List of Professors' }
   },
   {
     path: 'professor/:id',
     component: ShowArticleComponent,
     data: { title: 'Show Product' }
-  },
-  {
-    path: 'add-professor',
-    component: AddArticleComponent,
-    data: { title: 'Add Article' }
-  },
-  {
-    path: 'edit-professor/:id',
-    component: EditArticleComponent,
-    data: { title: 'Edit Article' }
   },
   { path: '',
     redirectTo: '/home',

@@ -10,16 +10,15 @@ import { EditArticleComponent } from './article/edit-article/edit-article.compon
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './services/auth.service';
+import { ProfessorsComponent } from './professor/professors/professors.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticlesComponent,
     ShowArticleComponent,
-    AddArticleComponent,
-    EditArticleComponent,
     HomeComponent,
     NavbarComponent,
+    ProfessorsComponent,
   ],
   imports: [
     BrowserModule,

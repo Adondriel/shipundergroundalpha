@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { environment } from './../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Professor } from './professor.model';
-const apiUrl = `api/professor`;
+import { Professor } from '../models/professor.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfessorService {
+  private apiUrl = `api/professor`;
 
   constructor(private http: HttpClient) { }
 
@@ -21,14 +21,14 @@ export class ProfessorService {
   }
 
   getProfessors(): Observable<Professor[]> {
-    return this.http.get<Professor[]>(apiUrl, {}).pipe(
+    return this.http.get<Professor[]>(this.apiUrl, {}).pipe(
       tap(article => console.log('fetched professors')),
       catchError(this.handleError('getProfessors', []))
     );
   }
 
   getProfessor(id: any): Observable<Professor> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${this.apiUrl}/${id}`;
     return this.http.get<Professor>(url).pipe(
       tap(_ => console.log(`fetched professor id=${id}`)),
       catchError(this.handleError<Professor>(`getProfessor id=${id}`))

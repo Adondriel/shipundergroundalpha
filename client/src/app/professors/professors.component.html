@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-4 pt-2 pb-2" *ngFor="let prof of this.professors">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title clickable" [routerLink]="['/professor', prof._id]">
+                    {{prof.lastName || 'undefined'}}, {{prof.firstName || 'undefined'}}
+                </h5>
+                <p class="card-text">{{prof.department && prof.department.name ? prof.department.name : ''}}</p>
+            </div>
+            <!-- <div class="card-footer">
+                <button class="btn btn-primary" >
+                    View
+                </button>
+            </div> -->
+        </div>
+    </div>
+</div>

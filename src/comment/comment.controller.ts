@@ -15,14 +15,14 @@ export class CommentController {
         return await this.commentService.createComment(comment);
     }
 
-    @Get()
-    async getComments() {
-        return await this.commentService.getComments();
+    @Get(':profId')
+    async getComments(@Param('profId') profId: string) {
+        let lProfId: number | string;
+        if (profId.length < 6) {
+            lProfId = Number.parseInt(profId, 10);
+        } else if (ObjectID.isValid(profId)) {
+            lProfId = profId;
+        }
+        return await this.commentService.getComments(Number.parseInt(profId, 10));
     }
-
-    @Get(':id')
-    async getComment(@Param('id') id: ObjectID) {
-        return await this.commentService.getComment(id);
-    }
-
 }

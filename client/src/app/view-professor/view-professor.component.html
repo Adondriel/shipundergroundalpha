@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">{{this.professor ? this.professor.firstName : ''}} {{this.professor ? this.professor.lastName : ''}}</h1>
+        </div>
+        <div class="col-12">
+            <h5 class="text-center">{{this.professor && this.professor.department && this.professor.department.name ? this.professor.department.name : ''}}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <p *ngFor="let c of this.comments">
+            {{c.message}}
+        </p>
+    </div>
+</div>

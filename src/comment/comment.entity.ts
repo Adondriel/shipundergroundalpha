@@ -1,6 +1,8 @@
 import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
 
-@Entity()
+@Entity('comment', {
+    engine: 'MongoDB',
+})
 export class Comment {
     @ObjectIdColumn()
     id?: ObjectID;

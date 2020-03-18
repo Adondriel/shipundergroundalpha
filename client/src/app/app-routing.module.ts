@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ShowArticleComponent } from './article/show-article/show-article.component';
 import { HomeComponent } from './home/home.component';
-import { ProfessorsComponent } from './professor/professors/professors.component';
+import { ProfessorsComponent } from './professors/professors.component';
+import { ViewProfessorComponent } from './view-professor/view-professor.component';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'professor/:id',
-    component: ShowArticleComponent,
+    component: ViewProfessorComponent,
     data: { title: 'Show Product' }
   },
   { path: '',

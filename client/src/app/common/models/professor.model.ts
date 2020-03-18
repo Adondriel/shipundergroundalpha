@@ -1,5 +1,6 @@
-export class Article {
-    id: string;
+export class Professor {
+    _id: string;
+    id: number;
     firstName: string;
     lastName: string;
     departmentId: string;

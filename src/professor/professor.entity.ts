@@ -3,13 +3,21 @@ import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
 @Entity()
 export class Professor {
     @ObjectIdColumn()
-    id: ObjectID;
+    _id: ObjectID;
+    @Column()
+    id: number;
     @Column()
     firstName: string;
     @Column()
     lastName: string;
     @Column()
-    departmentId: string;
-    @Column()
     email: string;
+    @Column()
+    department: Department;
+}
+
+interface Department {
+    id: number;
+    abbreviation: string;
+    name: string;
 }

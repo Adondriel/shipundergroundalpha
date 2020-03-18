@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Professor } from '../professor.model';
-import { ProfessorService } from '../professor.service';
+import { Professor } from '../common/models/professor.model';
+import { ProfessorService } from '../common/services/professor.service';
 
 @Component({
-  selector: 'app-professors',
+  selector: 'su-professors',
   templateUrl: './professors.component.html',
   styleUrls: ['./professors.component.scss']
 })

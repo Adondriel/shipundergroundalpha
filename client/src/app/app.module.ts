@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './common/services/auth.service';
 import { ProfessorsComponent } from './professors/professors.component';
 import { ViewProfessorComponent } from './view-professor/view-professor.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ViewProfessorComponent } from './view-professor/view-professor.componen
     NavbarComponent,
     ProfessorsComponent,
     ViewProfessorComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,

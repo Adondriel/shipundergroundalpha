@@ -3,6 +3,12 @@ export class Professor {
     id: number;
     firstName: string;
     lastName: string;
-    departmentId: string;
+    department: Department;
     email: string;
+}
+
+interface Department {
+    id: number;
+    abbreviation: string;
+    name: string;
 }
